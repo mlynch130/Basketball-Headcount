@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "serverSourceRoot": "/var/www/html/basketball",
+            "localSourceRoot": "${workspaceRoot}",
+            "log": true
+        },
+        {
+            "name": "Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://192.168.1.32",
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}
