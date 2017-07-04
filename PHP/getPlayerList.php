@@ -2,8 +2,11 @@
 //This script looks up all available players in the database and returns their names
 //in an encoded JSON object to the client. This is called when the RSVP page first loads
 
+<<<<<<< HEAD
 //TEST COMMIT2
 
+=======
+>>>>>>> basketball/master
 $playerList = array();
 $name = "";
 
