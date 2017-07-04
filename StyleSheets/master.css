@@ -1,0 +1,26 @@
+#header
+{
+	width: 100%;
+	height: auto;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: auto;
+	text-align: left;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: auto;
+	height: auto;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 1px;
+	border-radius: 5px;
+	margin: auto;
+	text-align: left;
+}
+
