@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -42,49 +41,4 @@
   </div>
 </body>
 
-=======
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSVP</title>
-  <link rel="stylesheet" type="text/css" href="StyleSheets/rsvp.css" />
-</head>
-<div id="header" />
-
-<body>
-  <script src="/Scripts/loadHeader.js"></script>
-  <div class="page">
-    <h1>Are you in?</h1>
-
-
-    <form action="/PHP/receiveRsvp.php" method="post" onsubmit="return validateFormSubmission()">
-      <div class="error" hidden="true" id="form_error">
-      </div>
-      <div class="input_container">
-        <input type="text" name="playerName" id="name_id" autocomplete="off" placeholder="Enter name..." />
-        <ul id="name_list_id" />
-      </div>
-      <br />
-      <br />
-      <input type="radio" name="selection" value="Yes" checked>Yes<br>
-      <input type="radio" name="selection" value="Maybe">Maybe<br>
-      <input type="radio" name="selection" value="No">No
-      <br />
-      <div class="submit-button">
-        <input type="submit" id="btnSubmit" value="Submit" />
-      </div>
-    </form>
-
-    <?php echo "hello world" ?>
-
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="/Scripts/rsvpBehavior.js"></script>
-  </div>
-</body>
-
->>>>>>> basketball/master
 </html>
