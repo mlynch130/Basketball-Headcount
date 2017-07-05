@@ -6,6 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $playerName = secure_input($_POST["playerName"]);
 
     if (playerIsLegit($playerName)) {
+        
+        setcookie("playerName",rawurlencode($playerName),time()+60*60*24*30,"/");
         echo "we're cool here";
     }
     else {

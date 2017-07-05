@@ -3,6 +3,8 @@ var playerList = "";
 $(document).ready(function () {
 
 	populatePlayerList();
+
+	rememberPlayer();
 });
 
 //###########
@@ -18,16 +20,19 @@ document.getElementById("name_id").onkeyup = function () {
 
 
 //###########
-//NAME: set_iten
+//NAME: setPlayerName
 //DESCRIPTION: Sets the value of the player name input based
 //             on the selected list item. This is called via the
 //			   onclick event for each list item. The event gets 
 //			   attached in suggestPlayerList in this script
+//
+//			   Also called from rememberPlayer function when checking
+//			   cookies
 //PARAMETERS:
 //-item(I,REQ)=a string containting the player name
 //RETURNS: (none)
 //###########
-function set_item(item) {
+function setPlayerName(item) {
 	// change input value
 	$('#name_id').val(item);
 	// hide proposition list
@@ -101,7 +106,7 @@ function suggestPlayerList(keyword, listElement) {
 		if (len > 0) {
 			listElement.show();
 			for (i = 0; i < matchingPlayers.length; i++) {
-				strHtml = strHtml + "<li onclick=\"set_item('"+matchingPlayers[i]+"')\">" + matchingPlayers[i] + "</li>";
+				strHtml = strHtml + "<li onclick=\"setPlayerName('"+matchingPlayers[i]+"')\">" + matchingPlayers[i] + "</li>";
 			}
 			listElement.html(strHtml);
 		}
@@ -155,4 +160,42 @@ function populatePlayerList() {
 			playerList = JSON.parse(data);
 		}
 	});
+}
+
+//###########
+//NAME: getCookie
+//DESCRIPTION: returns
+//PARAMETERS:
+//-cname(I,REQ)-the name of the cookie to return
+//RETURNS: the value of the request cookie
+//###########
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return decodeURIComponent(c.substring(name.length, c.length)); //decode twice to properly handle spaces in name
+        }
+    }
+    return "";
+}
+
+//###########
+//NAME: rememberPlayer
+//DESCRIPTION: Checks for the playerName cookie and if set
+//             and if set puts the name value into the input box
+//PARAMETERS:
+//-(none)
+//RETURNS: (nothing)
+//###########	
+function rememberPlayer() {
+	var playerName = getCookie("playerName");
+	if (playerName !== null) {
+		setPlayerName(playerName);
+	}
 }

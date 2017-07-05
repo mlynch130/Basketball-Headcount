@@ -1,10 +1,14 @@
 <html>
     <body>
 <?php
-include("admin.php");
+$value="John Klip";
+echo "value=".$value;
+echo "<br/>";
+echo "urlencode=".urlencode($value);
+echo "<br/>";
+echo "rawurlencode=".rawurlencode($value);
 
 
-echo getCurrentHeadCountDate();
 ?>
 
 </body>
